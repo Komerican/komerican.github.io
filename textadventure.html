@@ -4,6 +4,35 @@
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <h1>Mr. Peter Park</h1>
+    <style>
+
+        #container{
+        position: absolute;
+        top: 80px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background-color: green;
+        }
+
+        #rightpane{
+            width: 56%;
+            height: 100%;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: red;
+        }
+
+        #leftpane{
+            width: 44%;
+            height: 100%;
+            float: left;
+            background-color: blue;
+        }
+
+    </style>
     </head>
      <body background= "https://www.solidbackgrounds.com/download/2560x1440-blue-stained-glass-free-website-background-image.jpg">
     <ul class="navbar">
@@ -14,7 +43,7 @@
         <li class="dropdown">
         <div>Projects</div>
         <ul class="dropdown-content">
-        <li><a href="project1.html">Project 1</a></li>
+        <li><a href="textadventure.html">Text Adventure</a></li>
         <li><a href="project2.html">Project 2</a></li>
         <li><a href="project3.html">Project 3</a></li>
         </ul>
@@ -25,8 +54,14 @@
 
     </ul>
 
-    <h2>Project 1</h2>
+<div id= "container">
+    <div id="leftpane">
+    </div>
 
+    <div id="rightpane">
+    </div>
+
+</div>
 
     </body>
 </html>

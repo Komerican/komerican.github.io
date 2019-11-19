@@ -188,7 +188,7 @@
 
         function drillUsage(){
         pic.src = "images/";
-        ptext1.innerHTML = "You use the drill but it doesn't have any batteries";
+        ptext1.innerHTML = "You use the drill but it doesn't have any batteries. You then struck a big brain moment, as you put the batteries of the phone inside the drill. ";
         ptext2.innerHTML = "";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
@@ -227,21 +227,21 @@
         b3.style.display = "none";
     }
 
+
 //state machine
 function bclick (button){
-
     if (state == "intro"){
         if (button == 1){
             meetFrankie();
             state = "meetFrankie"
-
             }
-            else if (button == 2){
+           else if (button == 2){
               noPlay();
               state = "noPlay"
             }
     }
-    if (state == "noPlay"){
+
+    else if (state == "noPlay"){
         if (button == 1){
             intro();
             state = "intro"

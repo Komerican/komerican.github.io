@@ -82,9 +82,9 @@
 }
 
 #storyimg{
-    max-width: ;
-    max-height: ;
-    width: 56%
+    max-width: 94%;
+    max-height: 94%;
+    width: 150%
 }
 
     </style>
@@ -146,7 +146,7 @@
     intro();
 
     function intro(){
-        pic.src = "images/";
+        pic.src = "images/prison.jpg";
         ptext1.innerHTML = "You, Frankie, has been imprisoned for taking $1,000,000 worth of samples from Costco. After being locked up for 10 years in the isolated Faroe Islands prison, you have just recieved a mysterious box from your brother Cole the  rival buisness Sam's Club Manager.";
         ptext2.innerHTML = "Will you like to assist Frankie in his escape from the slammer?";
         ptext3.innerHTML = "";
@@ -160,7 +160,7 @@
       }
 
     function meetFrankie(){
-        pic.src = "images/";
+        pic.src = "images/mystery.jpg";
         ptext1.innerHTML = "The box has been delivered with 3 objects you can either choose to use the drill, file,or box to begin your escape out of this hell.";
         ptext2.innerHTML = "";
         ptext3.innerHTML = "";
@@ -173,7 +173,7 @@
         b3.style.display = "block";
     }
         function noPlay(){
-        pic.src = "images/";
+        pic.src = "images/gameover.jpg";
         ptext1.innerHTML = "Ok fine, be stuck in purgatory";
         ptext2.innerHTML = "";
         ptext3.innerHTML = "";
@@ -189,21 +189,21 @@
         function drillUsage(){
         pic.src = "images/";
         ptext1.innerHTML = "You use the drill but it doesn't have any batteries. You then struck a big brain moment, as you put the batteries of the phone inside the drill. ";
-        ptext2.innerHTML = "";
-        ptext3.innerHTML = "";
+        ptext2.innerHTML = "Surprisingly, the drill works as you attempt to escape. But in only mere seconds, the battery then overheats and causes a little miniscule explosion, alamring the smoke detectors. How convenient.";
+        ptext3.innerHTML = "The guards are now on their way to your cell to inspect the situation, or it could be another opportunity for you. What is your decision?";
         ptext4.innerHTML = "";
-        b1.innerHTML = "";
-        b2.innerHTML = "";
-        b3.innerHTML = "";
-        b1.style.display = "none";
-        b2.style.display = "none";
-        b3.style.display = "none";
+        b1.innerHTML = "Make a run for it and hide somewhere";
+        b2.innerHTML = "Frame your cellmate";
+        b3.innerHTML = "Try to repair the cell before the guards arrive";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "block";
     }
 
         function phoneUsage(){
-        pic.src = "images/";
-        ptext1.innerHTML = "You try to use the phone, but then realzied it was from Sprint, resulting in not having any service at all. Unfortunate.";
-        ptext2.innerHTML = "You are now stuck in the slammer forever";
+        pic.src = "images/gameover.jpg";
+        ptext1.innerHTML = "You try to use the phone, but then realized it was from Sprint, resulting in not having any service at all. Unfortunate.";
+        ptext2.innerHTML = "You are now stuck in the slammer forever!";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
         b1.innerHTML = "Try Again";
@@ -214,15 +214,28 @@
         b3.style.display = "none";
     }
         function fileUsage(){
-        pic.src = "images/";
-        ptext1.innerHTML = "You pick up the file, you now have some options to take.";
+        pic.src = "images/file.jpg";
+        ptext1.innerHTML = "You pick up the file, you now have some options to take. What will it be?";
+        ptext2.innerHTML = "You can stab yourself and make your death in order to be transferred to a different area.";
+        ptext3.innerHTML = "Attack the officer and make a break for it after your assault";
+        ptext4.innerHTML = "Pick the cell's lock and sneaking out of the slammer";
+        b1.innerHTML = "Stab yourself";
+        b2.innerHTML = "Attack the officer";
+        b3.innerHTML = "Try to pick the cell's lock";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "block";
+
+        function drillFail1(){
+        pic.src = "images/file.jpg";
+        ptext1.innerHTML = "You try to repair the the cell, but it is perminetly damaged.";
         ptext2.innerHTML = "";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
-        b1.innerHTML = "";
+        b1.innerHTML = "Give Another Shot at it";
         b2.innerHTML = "";
         b3.innerHTML = "";
-        b1.style.display = "none";
+        b1.style.display = "block";
         b2.style.display = "none";
         b3.style.display = "none";
     }
@@ -263,8 +276,8 @@ function bclick (button){
     }
     else if (state == "phoneUsage"){
         if (button == 1){
-            meetFrankie();
-            state = "meetFrankie"
+            intro();
+            state = "intro"
         }
     }
     return false;

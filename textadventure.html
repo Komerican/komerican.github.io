@@ -185,7 +185,19 @@
         b2.style.display = "none";
         b3.style.display = "none";
     }
-
+        function phoneUsage(){
+        pic.src = "images/gameover.jpg";
+        ptext1.innerHTML = "You try to use the phone, but then realized it was from Sprint, resulting in not having any service at all. Unfortunate.";
+        ptext2.innerHTML = "You are now stuck in the slammer forever!";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "Try Again";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+    }
         function drillUsage(){
         pic.src = "images/";
         ptext1.innerHTML = "You use the drill but it doesn't have any batteries. You then struck a big brain moment, as you put the batteries of the phone inside the drill. ";
@@ -199,11 +211,10 @@
         b2.style.display = "block";
         b3.style.display = "block";
     }
-
-        function phoneUsage(){
+       function drillFail1(){
         pic.src = "images/gameover.jpg";
-        ptext1.innerHTML = "You try to use the phone, but then realized it was from Sprint, resulting in not having any service at all. Unfortunate.";
-        ptext2.innerHTML = "You are now stuck in the slammer forever!";
+        ptext1.innerHTML = "You try to repair the the cell, but it is perminetly damaged.";
+        ptext2.innerHTML = "The gaurds then see that you have damaged the cell and then put you off into solitary.";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
         b1.innerHTML = "Try Again";
@@ -211,6 +222,45 @@
         b3.innerHTML = "";
         b1.style.display = "block";
         b2.style.display = "none";
+        b3.style.display = "none";
+    }
+        function drillFrame1(){
+        pic.src = "images/";
+        ptext1.innerHTML = "You place the broken drill parts next to your sleeping cellmate.";
+        ptext2.innerHTML = "The gaurds then take away your cellmate for attempted escape. You then earn the gaurds trust for your good deed."
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+    }
+        function drillRun1(){
+        pic.src = "images/";
+        ptext1.innerHTML = "You escaped from the broken cell as the gaurds try to find you.";
+        ptext2.innerHTML = "You hide and lay low, as you think what to do next";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "Hide in a Trash Can";
+        b2.innerHTML = "Hide in the Air Ducts";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+    }
+        function drillTrash1(){
+        pic.src = "images/";
+        ptext1.innerHTML = "You hide inside one of the disgusting trash cans for around 2 hours.";
+        ptext2.innerHTML = "Someone then picks up and throws that trash into the trash room, which would eventually be dumped into the ocean.";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "block";
         b3.style.display = "none";
     }
         function fileUsage(){
@@ -226,23 +276,51 @@
         b2.style.display = "block";
         b3.style.display = "block";
       }
-        function drillFail1(){
-        pic.src = "images/file.jpg";
-        ptext1.innerHTML = "You try to repair the the cell, but it is perminetly damaged.";
-        ptext2.innerHTML = "";
+        function filePick(){
+        pic.src = "images/gameover.jpg";
+        ptext1.innerHTML = "You try to pick the lock of the cell, but then the file is plastic so it breaks. Inifficiency at it's finest.";
+        ptext2.innerHTML = "You're stuck in the slammer forever!";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
-        b1.innerHTML = "Give Another Shot at it";
+        b1.innerHTML = "Try Again";
         b2.innerHTML = "";
         b3.innerHTML = "";
         b1.style.display = "block";
         b2.style.display = "none";
         b3.style.display = "none";
-    }
+      }
+        function fileStab(){
+        pic.src = "images/";
+        ptext1.innerHTML = "You catch the police attention by commiting a scucidal act of stabbing yourself, as they unlock the doors to retrieve your body.";
+        ptext2.innerHTML = "Perfect.";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "block";
+      }
+        function fileAttack(){
+        pic.src = "images/gameover.jpg";
+        ptext1.innerHTML = "You try to act sick, getting the attention of the officer.";
+        ptext2.innerHTML = "As he approaches you, you sneak attacked him with your file, but quickly are pinned down. Not even that surprised, that was you just being stupid.";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "Try Again";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+      }
 
 
 //state machine
+
 function bclick (button){
+
     if (state == "intro"){
         if (button == 1){
             meetFrankie();
@@ -274,12 +352,69 @@ function bclick (button){
             state = "fileUsage"
         }
     }
+
+    else if (state == "fileUsage"){
+        if (button == 1){
+            fileStab();
+            state = "fileStab"
+        }
+        else if (button == 2){
+            fileAttack();
+            state = "fileAttack"
+        }
+        else if (button == 3){
+            filePick();
+            state = "filePick"
+        }
+
+    }
+        else if (state == "fileAttack"){
+        if (button == 1){
+            intro();
+            state = "intro"
+        }
+    }
+    else if (state == "filePick"){
+        if (button == 1){
+            intro();
+            state = "intro"
+        }
+    }
+
     else if (state == "phoneUsage"){
         if (button == 1){
             intro();
             state = "intro"
         }
     }
+
+    else if (state == "drillUsage"){
+        if (button == 1){
+        drillRun1();
+        state = "drillRun1"    
+    }
+        else if (button == 2){
+            drillFrame1();
+            state = "drillFrame1"
+        }
+        else if (button == 3){
+            drillFail1();
+            state = "drillFail1"
+        }
+    }
+
+    else if (state == "drillFail1"){
+        if (button == 1){
+            intro();
+            state = "intro"
+        }
+    }
+
+    else if (state == "drillRun1")
+        if (button == 1){
+         drillTrash1();
+         state = "drillTrash1"
+        }
     return false;
 }
 

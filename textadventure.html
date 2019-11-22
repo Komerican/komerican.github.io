@@ -225,12 +225,12 @@
         b3.style.display = "none";
     }
         function drillFrame1(){
-        pic.src = "images/";
-        ptext1.innerHTML = "You place the broken drill parts next to your sleeping cellmate.";
-        ptext2.innerHTML = "The gaurds then take away your cellmate for attempted escape. You then earn the gaurds trust for your good deed."
+        pic.src = "images/gameover.jpg";
+        ptext1.innerHTML = "You place the broken drill parts next to your cellmate.";
+        ptext2.innerHTML = "Your cellmate watches you pathetically scoot the broken drill towards him, resulting with you having a broken face. Aren't you just so clever?"
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
-        b1.innerHTML = "";
+        b1.innerHTML = "Try Again";
         b2.innerHTML = "";
         b3.innerHTML = "";
         b1.style.display = "block";
@@ -296,11 +296,37 @@
         ptext2.innerHTML = "";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
-        b1.innerHTML = "";
-        b2.innerHTML = "";
+        b1.innerHTML = "Drop Down into the Office";
+        b2.innerHTML = "Keep Crawling";
         b3.innerHTML = "";
         b1.style.display = "block";
         b2.style.display = "block";
+        b3.style.display = "none";
+    }
+        function drillOffice(){
+        pic.src = "images/kermit.png";
+        ptext1.innerHTML = "You drop down and you find not only police uniforms, but some backup keys as well. You use this to make your risky escape from the slammer. Your whereabouts remain unknown after this.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "ENCORE!";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+    }
+        function drillLunch(){
+        pic.src = "images/gameover.jpg";
+        ptext1.innerHTML = "As you crawl, you then suddenly fall down to a break area for police officers. They help you get up, dust you off, hand you a cookie, and then you are sent back into the slammer.";
+        ptext2.innerHTML = "At least they gave you a nice cookie though, that was nice of them.";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "Try Again";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "none";
         b3.style.display = "none";
     }
         function fileUsage(){
@@ -520,13 +546,42 @@ function bclick (button){
         }
         }
 
-        else if (state == "drillStay"){
+     else if (state == "drillStay"){
         if (button == 1){
          intro();
          state = "intro"
         }
     }
-        else if (state == "drillRun"){
+    else if (state == "drillRun"){
+        if (button == 1){
+         intro();
+         state = "intro"
+        }
+    }
+       else if (state == "drillFrame1"){
+        if (button == 1){
+         intro();
+         state = "intro"
+        }
+    }
+
+    else if (state == "drillDucts"){
+        if (button == 1){
+         drillOffice();
+         state = "drillOffice"
+        }
+        else if (button == 2){
+        drillLunch();
+        state = "drillLunch"
+        }
+    }
+    else if (state == "drillOffice"){
+        if (button == 1){
+         intro();
+         state = "intro"
+        }
+    }
+    else if (state == "drillLunch"){
         if (button == 1){
          intro();
          state = "intro"

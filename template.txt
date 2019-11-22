@@ -1,0 +1,19 @@
+    function (){
+        pic.src = "images/";
+        ptext1.innerHTML = "";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+    }
+
+git add .
+
+git commit -m ""
+
+git push -u origin master

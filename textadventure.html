@@ -253,7 +253,47 @@
         function drillTrash1(){
         pic.src = "images/";
         ptext1.innerHTML = "You hide inside one of the disgusting trash cans for around 2 hours.";
-        ptext2.innerHTML = "Someone then picks up and throws that trash into the trash room, which would eventually be dumped into the ocean.";
+        ptext2.innerHTML = "Someone then picks up and throws that trash into the trash room, which would eventually be onto an oncean ship and then eventually burned.";
+        ptext3.innerHTML = "Do you risk being thrown into the ocean, or rather play it safe and run upstairs to find another escape route?";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "Stay";
+        b2.innerHTML = "Run Upstairs";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+    }
+        function drillStay(){
+        pic.src = "images/kermit.png";
+        ptext1.innerHTML = "The ship sails away to a nearby land, where you go into hinding until you fall asleep.";
+        ptext2.innerHTML = "You then wake up, realizing that it was only a simulation the entire time. You decided that you shouldn't be taking so many samples from Costco.";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "ENCORE!";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+    }
+    function drillRun(){
+        pic.src = "images/gameover.jpg";
+        ptext1.innerHTML = "You You run up stairs covered in trash and as soon as the door opens, the janitor wacks you in the head with his mop and knocks you out.";
+        ptext2.innerHTML = "Probably the lamest way to get caught.";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "Try Again";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+    }
+
+    function drillDucts(){
+        pic.src = "images/";
+        ptext1.innerHTML = "The air ducts are hot and tight, but at least no one can find where you crawl around for a couple of hours until you spot the warren's office.";
+        ptext2.innerHTML = "";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
         b1.innerHTML = "";
@@ -290,18 +330,44 @@
         b3.style.display = "none";
       }
         function fileStab(){
-        pic.src = "images/";
+        pic.src = "images/OW.png";
         ptext1.innerHTML = "You catch the police attention by commiting a scucidal act of stabbing yourself, as they unlock the doors to retrieve your body.";
-        ptext2.innerHTML = "Perfect.";
+        ptext2.innerHTML = "As your body is being transferred to a bed, you can either cut the straps off from the body locking you up and quickly escape, or wait until the nurse arrives and use her as a hostage?";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
-        b1.innerHTML = "";
-        b2.innerHTML = "";
+        b1.innerHTML = "Cut the straps and break free";
+        b2.innerHTML = "Wait until the nurse gets here";
         b3.innerHTML = "";
         b1.style.display = "block";
         b2.style.display = "block";
-        b3.style.display = "block";
+        b3.style.display = "none";
       }
+        function fileFail1(){
+        pic.src = "images/gameover.jpg";
+        ptext1.innerHTML = "You cut the straps to break free, but then collapse to the floow due to you dying of blood loss.";
+        ptext2.innerHTML = "Actual Big Brain Move right there man.";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "Try Again";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+    }
+        function fileFail2(){
+        pic.src = "images/gameover.jpg";
+        ptext1.innerHTML = "You wait for the nurse to approach you. When she does, you put a file upon her neck and threaten for his release or else.";
+        ptext2.innerHTML = "The nurse quickly disamrs you and just boots you back into the slammer. After all, you're in a prison. What else were you expecting, a damsel in distress situations?";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "Try Again";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+    }
         function fileAttack(){
         pic.src = "images/gameover.jpg";
         ptext1.innerHTML = "You try to act sick, getting the attention of the officer.";
@@ -380,6 +446,28 @@ function bclick (button){
             state = "intro"
         }
     }
+    else if (state == "fileStab"){
+        if (button == 1){
+            fileFail1();
+            state = "fileFail1"
+        }
+        else if (button == 2){
+            fileFail2();
+            state = "fileFail2"
+        }
+    }
+    else if (state == "fileFail1"){
+        if (button == 1){
+         intro();
+         state = "intro"
+        }
+    }
+        else if (state == "fileFail2"){
+        if (button == 1){
+         intro();
+         state = "intro"
+        }
+    }
 
     else if (state == "phoneUsage"){
         if (button == 1){
@@ -410,11 +498,40 @@ function bclick (button){
         }
     }
 
-    else if (state == "drillRun1")
+    else if (state == "drillRun1"){
         if (button == 1){
          drillTrash1();
          state = "drillTrash1"
         }
+        else if (button == 2){
+            drillDucts();
+            state = "drillDucts"
+        }      
+}
+
+    else if (state == "drillTrash1"){
+        if (button == 1){
+            drillStay();
+            state = "drillStay"
+        }
+        else if (button == 2){
+            drillRun();
+            state = "drillRun"
+        }
+        }
+
+        else if (state == "drillStay"){
+        if (button == 1){
+         intro();
+         state = "intro"
+        }
+    }
+        else if (state == "drillRun"){
+        if (button == 1){
+         intro();
+         state = "intro"
+        }
+    }
     return false;
 }
 

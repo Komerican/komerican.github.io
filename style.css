@@ -13,8 +13,8 @@ color: #bc2e1e;
         #text {
             position: absolute;
             bottom: 0px;
-            top: 20%;
-            left: 40%;
+            top: 5;
+            left: 30%;
             right: 0px;
             display: flex;
             align-items: center;

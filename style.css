@@ -10,6 +10,16 @@ color: #bc2e1e;
   width: 100%;
 
 }
+        #text {
+            position: absolute;
+            bottom: 0px;
+            top: 50%;
+            left: 70%;
+            right: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         .navbar{
         list-style:none;

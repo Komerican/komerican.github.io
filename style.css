@@ -10,17 +10,6 @@ color: #bc2e1e;
   width: 100%;
 
 }
-        #text {
-            position: absolute;
-            bottom: 0px;
-            top: 0px;
-            left: 30%;
-            right: 0px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
         .navbar{
         list-style:none;
         background: linear-gradient(to bottom right, #0099cc 4%, #ff0066 82%);
